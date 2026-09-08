@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Formulario de contacto">
+  <title>Contacto | Hablemos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="contact-panel" aria-labelledby="contact-title">
+      <div class="intro">
+        <p class="eyebrow">Contacto</p>
+        <h1 id="contact-title">Hablemos de tu proyecto.</h1>
+        <p class="intro-text">Cu&eacute;ntanos qu&eacute; necesitas y te responderemos lo antes posible.</p>
+        <div class="contact-note" aria-label="Tiempo de respuesta">
+          <span class="note-dot" aria-hidden="true"></span>
+          <span>Normalmente respondemos en menos de 24 horas.</span>
+        </div>
+      </div>
+
+      <form class="contact-form" action="#" method="post" enctype="multipart/form-data">
+        <p class="form-intro">Los campos marcados con <span aria-hidden="true">*</span> son obligatorios. Los demás son opcionales.</p>
+        <input id="form-version" name="form-version" type="hidden" value="contact-v1">
+        <div class="form-grid">
+          <div class="field field-full">
+            <label for="full-name">Nombre completo <span aria-hidden="true">*</span></label>
+            <input id="full-name" name="full-name" type="text" autocomplete="name" required minlength="2" placeholder="Tu nombre">
+          </div>
+
+          <div class="field">
+            <label for="email">Correo electr&oacute;nico <span aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required placeholder="tu@email.com">
+          </div>
+
+          <div class="field">
+            <label for="phone">Tel&eacute;fono</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="[0-9+() .-]{7,}" placeholder="+34 600 000 000" aria-describedby="phone-hint">
+            <small id="phone-hint">Opcional</small>
+          </div>
+
+          <div class="field field-full">
+            <label for="subject">Asunto <span aria-hidden="true">*</span></label>
+            <input id="subject" name="subject" type="text" required minlength="3" placeholder="&iquest;En qu&eacute; podemos ayudarte?">
+          </div>
+
+          <div class="field field-full">
+            <label for="message">Mensaje <span aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" rows="5" required minlength="10" placeholder="Escribe los detalles de tu consulta..."></textarea>
+          </div>
+        </div>
+
+        <fieldset>
+          <legend>Detalles opcionales de la consulta</legend>
+          <div class="form-grid">
+            <div class="field">
+              <label for="password">Código de seguimiento</label>
+              <input id="password" name="password" type="password" autocomplete="new-password" minlength="8" pattern="(?=.*[A-Za-z])(?=.*[0-9]).{8,}" aria-describedby="password-hint">
+              <small id="password-hint">8 caracteres como mínimo, con letras y números.</small>
+            </div>
+            <div class="field">
+              <label for="website">Sitio web o portfolio</label>
+              <input id="website" name="website" type="url" autocomplete="url" placeholder="ejemplo.com">
+            </div>
+            <div class="field">
+              <label for="search-topic">Buscar tema</label>
+              <input id="search-topic" name="search-topic" type="search" autocomplete="off" placeholder="Ej.: accesibilidad">
+            </div>
+            <div class="field">
+              <label for="team-size">Personas involucradas</label>
+              <input id="team-size" name="team-size" type="number" min="1" max="1000" step="1" inputmode="numeric" placeholder="1" aria-describedby="team-size-hint">
+              <small id="team-size-hint">Entre 1 y 1000 personas.</small>
+            </div>
+            <div class="field">
+              <label for="meeting-date">Fecha preferida</label>
+              <input id="meeting-date" name="meeting-date" type="date" min="2026-01-01" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="meeting-time">Hora preferida</label>
+              <input id="meeting-time" name="meeting-time" type="time" min="09:00" max="18:00" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="meeting-datetime">Fecha y hora exactas</label>
+              <input id="meeting-datetime" name="meeting-datetime" type="datetime-local" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="billing-month">Mes de inicio</label>
+              <input id="billing-month" name="billing-month" type="month" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="review-week">Semana de revisión</label>
+              <input id="review-week" name="review-week" type="week" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="favorite-color">Color de referencia</label>
+              <input id="favorite-color" name="favorite-color" type="color" value="#0d6259">
+            </div>
+            <div class="field field-full">
+              <label for="attachment">Adjuntar un archivo</label>
+              <input id="attachment" name="attachment" type="file" accept=".pdf,.doc,.docx,.txt" aria-describedby="attachment-hint">
+              <small id="attachment-hint">Formatos permitidos: PDF, DOC, DOCX o TXT.</small>
+            </div>
+            <div class="field field-full">
+              <label for="confidence">Nivel de detalle esperado</label>
+              <input id="confidence" name="confidence" type="range" min="1" max="5" value="3" step="1" aria-describedby="confidence-hint">
+              <small id="confidence-hint">De 1 (resumen) a 5 (detalle completo). Valor inicial: 3.</small>
+            </div>
+          </div>
+          <div class="choice-group">
+            <span class="group-label" id="priority-label">Prioridad</span>
+            <div class="choice-options" role="group" aria-labelledby="priority-label">
+              <label><input name="priority" type="radio" value="normal" checked> Normal</label>
+              <label><input name="priority" type="radio" value="urgent"> Urgente</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="consent-row">
+          <input id="consent" name="consent" type="checkbox" required>
+          <label for="consent">Acepto el tratamiento de mis datos para gestionar esta consulta. <span aria-hidden="true">*</span></label>
+        </div>
+
+        <div class="form-footer">
+          <p class="required-note"><span aria-hidden="true">*</span> Campos obligatorios</p>
+          <div class="form-actions">
+            <button type="button">Guardar borrador</button>
+            <button type="reset">Limpiar</button>
+            <input class="image-button" type="image" src="data:image/svg+xml,%3Csvg xmlns='%2568%2574%2574%2570%253A%252F%252Fwww.w3.org%252F2000%252Fsvg' width='32' height='32'%3E%3Crect width='32' height='32' rx='5' fill='%230d6259'/%3E%3Cpath d='M8 16h16M18 10l6 6-6 6' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E" alt="Enviar mensaje con imagen">
+            <button type="submit">Enviar mensaje <span aria-hidden="true">&rarr;</span></button>
+          </div>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
